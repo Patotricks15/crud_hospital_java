@@ -2,6 +2,7 @@ package service;
 
 import dao.PacienteDAO;
 import java.util.List;
+import java.util.Optional;
 import model.Paciente;
 
 public class PacienteService {
@@ -25,5 +26,17 @@ public class PacienteService {
 
     public void remover(Long id) {
         dao.deletar(id);
+    }
+
+    public Optional<Paciente> buscarPorId(Long id) {
+        return dao.buscarPorId(id);
+    }
+
+    public void alterarNome(Long id, String novoNome) {
+        dao.mudarNome(id, novoNome);
+    }
+
+    public void alterarIdade(Long id, int novaIdade) {
+        dao.mudarIdade(id, novaIdade);
     }
 }

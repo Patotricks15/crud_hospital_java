@@ -31,4 +31,12 @@ public class PacienteDAO {
     public void deletar(Long id) {
         pacientes.removeIf(p -> p.getId().equals(id));
     }
+
+    public void mudarNome(Long id, String novoNome) {
+        buscarPorId(id).ifPresent(p -> p.setNome(novoNome));
+    }
+
+    public void mudarIdade(Long id, int novaIdade) {
+        buscarPorId(id).ifPresent(p -> p.setIdade(novaIdade));
+    }
 }
