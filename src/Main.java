@@ -20,5 +20,6 @@ public class Main {
             System.out.println("Nome: " + p.getNome());
             System.out.println("Idade: " + p.getIdade());
         });
-    }
+
+        System.err.println("Probabilidade de câncer: " + String.format("%.2f", service.detectCancer(1L)));    }
 }

@@ -1,5 +1,4 @@
 package service;
-
 import dao.PacienteDAO;
 import java.util.List;
 import java.util.Optional;
@@ -38,5 +37,9 @@ public class PacienteService {
 
     public void alterarIdade(Long id, int novaIdade) {
         dao.mudarIdade(id, novaIdade);
+    }
+
+    public Double detectCancer(Long id) {
+        return dao.detectCancer(id);
     }
 }

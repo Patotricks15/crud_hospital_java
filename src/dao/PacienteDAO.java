@@ -3,6 +3,7 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import model.Paciente;
 
 public class PacienteDAO {
@@ -38,5 +39,10 @@ public class PacienteDAO {
 
     public void mudarIdade(Long id, int novaIdade) {
         buscarPorId(id).ifPresent(p -> p.setIdade(novaIdade));
+    }
+    public Double detectCancer(Long id) {
+        Random gerador = new Random();
+        Double prob_cancer = gerador.nextDouble(1);
+        return prob_cancer;
     }
 }
